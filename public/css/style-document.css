@@ -15,10 +15,20 @@ body {
 }
 
 #burgertable {
- ;
+
 }
 
 #customerinfo {
     background-color: black;
     color: white;
+}
+
+input[type="radio"] {
+    height: 1.3em;
+    width: 1.3em;
+}
+
+button:hover {
+    background-color: yellow;
+    cursor: pointer;
 }
