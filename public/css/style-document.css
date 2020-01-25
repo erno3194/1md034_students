@@ -2,5 +2,10 @@
 
 body {
     font-family: arial;
-    font-size: 16pt
+    font-size: 16pt;
+}
+
+
+.allergyinfo {
+    font-weight: bold;
 }
