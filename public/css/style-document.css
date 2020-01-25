@@ -3,19 +3,19 @@
 body {
     font-family: arial;
     font-size: 16pt;
+    margin: 0 auto;
 }
-
 
 .allergyinfo {
     font-weight: bold;
 }
 
 #burgerinfo {
-  
 }
 
 #burgertable {
-
+    width: 0pt;
+    margin: 0 auto;
 }
 
 #customerinfo {
