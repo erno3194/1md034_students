@@ -5,6 +5,15 @@ body {
     font-size: 16pt;
 }
 
+#header {
+    margin: 10px 30px;
+}
+
+#headerimg {
+    opacity: 0.9;
+}
+
+
 .allergyinfo {
     font-weight: bold;
 }
