@@ -7,12 +7,19 @@ body {
 
 #header {
     margin: 10px 30px;
+    height: 450px;
+    overflow: hidden;
 }
 
 #headerimg {
-    opacity: 0.9;
+    opacity: 0.5;
+    width: 100%
 }
 
+#headertxt {
+    padding: 1px 20px;
+    position: absolute;
+}
 
 .allergyinfo {
     font-weight: bold;
