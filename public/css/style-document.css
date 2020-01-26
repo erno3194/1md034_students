@@ -10,7 +10,9 @@ body {
 }
 
 .burgerinfo {
-    margin: 5px 50px;
+    margin: 10px 30px;
+    padding: 1px 20px;	
+    border: 3px dashed black;
 }
 
 #burgertable {
@@ -23,6 +25,7 @@ body {
     color: white;
     margin: 5px 30px;
     padding: 1px 20px;
+    border: 3px dashed white;
 }
 
 input[type="radio"] {
