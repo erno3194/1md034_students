@@ -3,14 +3,14 @@
 body {
     font-family: arial;
     font-size: 16pt;
-    margin: 0 auto;
 }
 
 .allergyinfo {
     font-weight: bold;
 }
 
-#burgerinfo {
+.burgerinfo {
+    margin: 5px 50px;
 }
 
 #burgertable {
@@ -18,9 +18,11 @@ body {
     margin: 0 auto;
 }
 
-#customerinfo {
+.customerinfo {
     background-color: black;
     color: white;
+    margin: 5px 30px;
+    padding: 1px 20px;
 }
 
 input[type="radio"] {
@@ -28,7 +30,12 @@ input[type="radio"] {
     width: 1.3em;
 }
 
+#submitbutton {
+    margin: 25px 30px;
+}
+
 button:hover {
     background-color: yellow;
     cursor: pointer;
+    
 }
