@@ -2,12 +2,12 @@
 
 body {
     font-family: arial;
-    font-size: 16pt;
+    font-size: 1.5em;
 }
 
 #header {
-    margin: 10px 30px;
-    height: 450px;
+    margin: 1em 1em;
+    height: 19em;
     overflow: hidden;
 }
 
@@ -17,9 +17,9 @@ body {
 }
 
 #headertxt {
-    padding: 1px 20px;
+    padding: 0.3em 1em;
     position: absolute;
-    margin-top: -480px;
+    margin-top: -10em;
 }
 
 .allergyinfo {
@@ -31,26 +31,25 @@ body {
 }
 
 .burgerselect {
-    margin: 10px 30px;
-    padding: 1px 20px;	
-    border: 3px dashed black;
+    margin: 1em 1em;
+    padding: 1em 1em;	
+    border: 0.2em dashed black;
 }
 
 .burgertable {
     margin: 0 auto;
     text-align: center;
     display: grid;
-    grid-gap: 140px;
-    grid-template-columns: 500px 500px 500px;
+    grid-gap: 2em;
+    grid-template-columns: 23.3em 23.3em 23.3em;
 }
 
 .b {
     margin: 0 auto;
-    
-    background-color: #900;
-    color: #fff;
-    border-radius: 5px;
-    padding: 20px;
+    background-color: #BE0C0C;
+    color: #FFC72C;
+    border-radius: 1em;
+    padding: 0.6em;
     font-size: 150%;
 }
 
@@ -58,9 +57,9 @@ body {
 .customerinfo {
     background-color: black;
     color: white;
-    margin: 5px 30px;
-    padding: 1px 20px;
-    border: 3px dashed white;
+    margin: 1em 1em;
+    padding: 1em 1em;
+    border: 0.2em dashed white;
 }
 
 input[type="radio"] {
@@ -69,7 +68,8 @@ input[type="radio"] {
 }
 
 #submitbutton {
-    margin: 25px 30px;
+    margin: 1em 2em;
+    align: center;
 }
 
 button:hover {
