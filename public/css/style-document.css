@@ -19,6 +19,7 @@ body {
 #headertxt {
     padding: 1px 20px;
     position: absolute;
+    margin-top: -480px;
 }
 
 .allergyinfo {
@@ -26,15 +27,33 @@ body {
 }
 
 .burgerinfo {
+    text-align: left;
+}
+
+.burgerselect {
     margin: 10px 30px;
     padding: 1px 20px;	
     border: 3px dashed black;
 }
 
-#burgertable {
-    width: 0pt;
+.burgertable {
     margin: 0 auto;
+    text-align: center;
+    display: grid;
+    grid-gap: 140px;
+    grid-template-columns: 500px 500px 500px;
 }
+
+.b {
+    margin: 0 auto;
+    
+    background-color: #900;
+    color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    font-size: 150%;
+}
+
 
 .customerinfo {
     background-color: black;
@@ -55,6 +74,5 @@ input[type="radio"] {
 
 button:hover {
     background-color: yellow;
-    cursor: pointer;
-    
+    cursor: pointer;    
 }
