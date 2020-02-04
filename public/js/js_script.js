@@ -46,7 +46,7 @@ for(let i=0; i<menu.length; i++)
 }
 */
 
-
+/*
 let gridElement = document.getElementById("myBurgerTable");
 for(let i=0; i<menu.length; i++)
 {
@@ -94,5 +94,5 @@ for(let i=0; i<menu.length; i++)
     divElement.appendChild(listItem);
     gridElement.appendChild(divElement);
     
-}
+}*/
 

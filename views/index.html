@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="css/style-document.css">
     <script src="js/js_script.js" defer></script>
     <script src="js/vue_script.js" defer></script>
-    <script src="https://vuejs.org/js/vue.js" defer></script>
+    <script src="https://vuejs.org/js/vue.js"></script>
   </head>
   <!-- Detta är en kommentar -->
   <body>
@@ -65,7 +65,24 @@
 		-->
 
 
-	  
+	  <div v-for="x in menu">
+            
+            <h4>{{x.name}}</h4>
+	    <img :src="x.img" width="250" height="175">
+	    <ul>
+	      <li>{{x.kcal}} kCal</li>
+              <div v-if = "x.allergyLac" >
+                <li> Contains lactose! </li>
+              </div>
+              <div v-if = "x.allergyGlu">
+                <li> Contains gluten! </li>     
+              </div>
+              <div v-if = "x.vegan">
+                <li> Vegan friendly! </li>              
+              </div>
+            </ul>
+	  </div>
+
 	  
 	</div>
 	

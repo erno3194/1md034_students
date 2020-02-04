@@ -36,11 +36,12 @@ const vm = new Vue({
     item5: item5.getKcal(),
   }
 })
+*/
 
-const vvm = new Vue({
-  el: '#myBurgers',
+const vm = new Vue({
+  el: '#myBurgerTable',
   data: {  
     menu: menu
   }
 })
-*/
+
