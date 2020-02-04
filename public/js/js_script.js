@@ -27,14 +27,15 @@ let item3 = new menuItem('Biggest eMac', ' ', true, true, false, 2028, 'img/bigm
 let item4 = new menuItem('Biggerest eMac', ' ', true, true, false, 4056, 'img/bigmac_460x330.jpg');
 let item5 = new menuItem('Biggestest eMac', ' ', true, true, false, 8112, 'img/bigmac_460x330.jpg');
 
+/*
 document.getElementById("b1").innerHTML = item1.getKcal();
 document.getElementById("b2").innerHTML = item2.getKcal();
 document.getElementById("b3").innerHTML = item3.getKcal();
 document.getElementById("b4").innerHTML = item4.getKcal();
 document.getElementById("b5").innerHTML = item5.getKcal();
-
+*/
 let menu = [item1, item2, item3, item4, item5];
-
+/*
 let myElement = document.getElementById("myBurgers");
 for(let i=0; i<menu.length; i++)
 {
@@ -43,21 +44,33 @@ for(let i=0; i<menu.length; i++)
     listItem.appendChild(listValue);
     myElement.appendChild(listItem);
 }
+*/
 
 
-
-let myElement = document.getElementById("myBurgers");
+let gridElement = document.getElementById("myBurgerTable");
 for(let i=0; i<menu.length; i++)
 {
+    let divElement = document.createElement("div");
+    let listItem = document.createElement("li");
+    let imgItem = document.createElement("img");
+    let headerItem = document.createElement("h4");
+    
+    let burgerName = document.createTextNode(menu[i].name)
+    let burgerKcal = document.createTextNode(menu[i].kcal + " kcal");
+    
+    
+    imgItem.setAttribute("src", menu[i].img);
 
-  let listItem = document.createElement("li");
-    let listValue = document.createTextNode(menu[i].getKcal());
-    listItem.appendChild(listValue);
+    headerItem.appendChild(burgerName);
+    divElement.appendChild(headerItem);
+    divElement.appendChild(imgItem);
+    listItem.appendChild(burgerKcal);
 
     
     if (menu[i].allergyLac){
 	allergyList = document.createElement("li");
 	let allergy = document.createTextNode("Contains lactose!");
+	allergyList.style.color = "red";
 	allergyList.appendChild(allergy);
 	listItem.appendChild(allergyList);
     }
@@ -65,19 +78,21 @@ for(let i=0; i<menu.length; i++)
     if (menu[i].allergyGlu){
 	allergyList = document.createElement("li");
 	let allergy = document.createTextNode("Contains gluten!");
+	allergyList.style.color = "red";
 	allergyList.appendChild(allergy);
 	listItem.appendChild(allergyList);
     }
-    
     
     if (menu[i].vegan){
-	allergyList = document.createElement("li");
-	let allergy = document.createTextNode("Vegan friendly!");
-	allergyList.appendChild(allergy);
-	listItem.appendChild(allergyList);
+	vegList = document.createElement("li");
+	let vegan = document.createTextNode("Vegan friendly!");
+	vegList.style.color = "green";
+	vegList.appendChild(vegan);
+	listItem.appendChild(vegList);
     }
-    
-    myElement.appendChild(listItem);
 
+    divElement.appendChild(listItem);
+    gridElement.appendChild(divElement);
+    
 }
 

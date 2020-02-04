@@ -23,7 +23,7 @@
       
   </div>
 </div>
-*/
+
 
 
 const vm = new Vue({
@@ -43,3 +43,4 @@ const vvm = new Vue({
     menu: menu
   }
 })
+*/
