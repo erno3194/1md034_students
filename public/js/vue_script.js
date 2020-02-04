@@ -41,7 +41,7 @@ const vm = new Vue({
 const vm = new Vue({
   el: '#myBurgerTable',
   data: {  
-    menu: menu
+    menu: food
   }
 })
 

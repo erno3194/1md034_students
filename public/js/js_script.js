@@ -6,7 +6,7 @@
 </div>
 */
 
-
+/*
 function menuItem(name, info, allergyLac, allergyGlu, vegan, kcal, img) {
   this.name = name;
   this.info = info;
@@ -26,16 +26,16 @@ let item2 = new menuItem('Bigger eMac', ' ', true, true, false, 1014, 'img/bigma
 let item3 = new menuItem('Biggest eMac', ' ', true, true, false, 2028, 'img/bigmac_460x330.jpg');
 let item4 = new menuItem('Biggerest eMac', ' ', true, true, false, 4056, 'img/bigmac_460x330.jpg');
 let item5 = new menuItem('Biggestest eMac', ' ', true, true, false, 8112, 'img/bigmac_460x330.jpg');
-
+*/
 /*
 document.getElementById("b1").innerHTML = item1.getKcal();
 document.getElementById("b2").innerHTML = item2.getKcal();
 document.getElementById("b3").innerHTML = item3.getKcal();
 document.getElementById("b4").innerHTML = item4.getKcal();
 document.getElementById("b5").innerHTML = item5.getKcal();
-*/
+
 let menu = [item1, item2, item3, item4, item5];
-/*
+
 let myElement = document.getElementById("myBurgers");
 for(let i=0; i<menu.length; i++)
 {
