@@ -41,7 +41,62 @@ const vm = new Vue({
 const vm = new Vue({
   el: '#myBurgerTable',
   data: {  
-    menu: food
-  }
+      menu: food,
+      checked: []
+  },
+    methods: {
+	getOrder: function() {
+	    return this.checked;
+	}
+    }
 })
 
+const info = new Vue({
+    el: '#deliveryInfo',
+    data: {
+	fullname: "",
+	email: "",
+	street: "",
+	house: "",
+	payment_method: "",
+	gender: ""
+    },
+
+    methods: {
+	markDone: function(fullname, email, street, house, payment_method, gender){
+	    console.log(fullname);
+	    let divElement = document.getElementById("myOrder");
+	    let nameItem = document.createElement("li");
+	    nameItem.innerHTML = fullname;
+
+	    let order = vm.getOrder();
+	    
+	    let emailItem = document.createElement("li");
+	    emailItem.innerHTML = email;
+	    let streetItem = document.createElement("li");
+	    streetItem.innerHTML = street;
+	    let houseNumberItem = document.createElement("li");
+	    houseNumberItem.innerHTML = house;
+	    let paymentItem = document.createElement("li");
+	    paymentItem.innerHTML = payment_method;
+	    let genderItem = document.createElement("li");
+	    genderItem.innerHTML = gender;
+	    
+	   
+	    divElement.appendChild(nameItem);
+	    divElement.appendChild(emailItem);
+	    divElement.appendChild(streetItem);
+	    divElement.appendChild(houseNumberItem);
+	    divElement.appendChild(paymentItem);
+	    divElement.appendChild(genderItem);
+
+	    for (x of order) {
+		let currentBurger = document.createElement("li");
+		currentBurger.innerHTML = x;
+		divElement.appendChild(currentBurger);
+		
+	    }
+	}
+    }
+    
+})
