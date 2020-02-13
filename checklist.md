@@ -69,8 +69,8 @@ Add the following style/behaviour to your website (mostly in style.css but also 
 - [x] Comment out your previous event listener and use Vue's corresponding functionality in vue_script.js and index.html to react on button presses
 - [x] Use Vue's model binding to collect the user's input
 - [x] Use Vue to print out a summary of the user's input to the bottom of your page when the order button is pressed
-- [ ] Add a checkbox to every burger on your menu when it is generated
-- [ ] Include what burgers the user has checked in the order summary
+- [x] Add a checkbox to every burger on your menu when it is generated
+- [x] Include what burgers the user has checked in the order summary
 
 
 ## 05 Messaging

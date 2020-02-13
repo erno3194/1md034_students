@@ -104,8 +104,6 @@ function buttonFunc(){
     console.log("You clicked button");
     var name = document.getElementById("fullname").value;
     var email = document.getElementById("email").value;
-    var streetName = document.getElementById("street").value;
-    var houseNumber = document.getElementById("house").value;
     var payment = document.getElementById("payment_method").value;
 
     if (document.getElementById("man").checked){
@@ -122,7 +120,7 @@ function buttonFunc(){
     }
 
 
-    let info = [name, email, streetName, houseNumber, payment, gender];
+    let info = [name, email, payment, gender];
     for (x in info) {
 	console.log(info[x]);
     }

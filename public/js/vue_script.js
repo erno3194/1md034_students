@@ -1,49 +1,10 @@
-/*<div>  
-   <h1>Välj en burgare</h1> 
-  <div id = "myBurgers" class = "table_wrapper">
-      <div v-for="x in menu">
-              <ul>
-                 <li> {{ x.getKcal() }} kCal</li>
-                 <div v-if = "x.allergyLac" >
-                 <li> Contains lactose! </li>
-                 </div>
-
-                 <div v-if = "x.allergyGlu">
-                 <li> Contains gluten! </li>     
-                 </div>
-
-                 <div v-if = "x.vegan">
-                 <li> Vegan friendly! </li>               
-                 </div>
-                 
-
-              </ul>
-      </div>
-      
-      
-  </div>
-</div>
-
-
 
 const vm = new Vue({
-  el: '#myBurgers',
-  data: {
-    item1: item1.getKcal(),
-    item2: item2.getKcal(),
-    item3: item3.getKcal(),
-    item4: item4.getKcal(),
-    item5: item5.getKcal(),
-  }
-})
-*/
-
-const vm = new Vue({
-  el: '#myBurgerTable',
-  data: {  
-      menu: food,
-      checked: []
-  },
+    el: '#myBurgerTable',
+    data: {  
+	menu: food,
+	checked: []
+    },
     methods: {
 	getOrder: function() {
 	    return this.checked;
@@ -51,19 +12,64 @@ const vm = new Vue({
     }
 })
 
+
+'use strict';
+const socket = io();
+
+
+
 const info = new Vue({
     el: '#deliveryInfo',
     data: {
+	
 	fullname: "",
 	email: "",
 	street: "",
 	house: "",
 	payment_method: "",
-	gender: ""
+	gender: "",
+	
+	orders: {}
     },
 
+
+    created: function() {
+	socket.on('initialize', function(data) {
+	    this.orders = data.orders;
+	}.bind(this));
+
+	socket.on('currentQueue', function(data) {
+	    this.orders = data.orders;
+	}.bind(this));
+    },
+    
+    
     methods: {
-	markDone: function(fullname, email, street, house, payment_method, gender){
+	
+	getNext: function() {
+	    let lastOrder = Object.keys(this.orders).reduce(function(last, next) {
+		return Math.max(last, next);
+	    }, 0);
+	    return lastOrder + 1;
+	},
+	
+	addOrder: function(event) {
+
+	    let offset = {
+		x: event.currentTarget.getBoundingClientRect().left,
+		y: event.currentTarget.getBoundingClientRect().top,
+	    };
+	    socket.emit('addOrder', {
+		orderId: this.getNext(),
+		details: {
+		    x: event.clientX - 10 - offset.x,
+		    y: event.clientY - 10 - offset.y,
+		},
+		orderItems: ['Beans', 'Curry'],
+	    });
+	},
+
+	markDone: function(fullname, email, payment_method, gender){
 	    console.log(fullname);
 	    let divElement = document.getElementById("myOrder");
 	    let nameItem = document.createElement("li");
@@ -73,20 +79,15 @@ const info = new Vue({
 	    
 	    let emailItem = document.createElement("li");
 	    emailItem.innerHTML = email;
-	    let streetItem = document.createElement("li");
-	    streetItem.innerHTML = street;
-	    let houseNumberItem = document.createElement("li");
-	    houseNumberItem.innerHTML = house;
 	    let paymentItem = document.createElement("li");
 	    paymentItem.innerHTML = payment_method;
 	    let genderItem = document.createElement("li");
 	    genderItem.innerHTML = gender;
 	    
-	   
+	    //this.addOrder();
+	    
 	    divElement.appendChild(nameItem);
 	    divElement.appendChild(emailItem);
-	    divElement.appendChild(streetItem);
-	    divElement.appendChild(houseNumberItem);
 	    divElement.appendChild(paymentItem);
 	    divElement.appendChild(genderItem);
 
@@ -96,7 +97,8 @@ const info = new Vue({
 		divElement.appendChild(currentBurger);
 		
 	    }
-	}
+	},
     }
     
 })
+
