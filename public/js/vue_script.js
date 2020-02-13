@@ -33,6 +33,7 @@ const info = new Vue({
 	    orderId: "",
 	    details: {x: 0, y: 0},
 	    orderItems: [],
+	    orderInfo: [],
 	},
 
 	i: 0,
@@ -47,7 +48,8 @@ const info = new Vue({
 		return Math.max(last, next);
 	    }, 0);
 	    return lastOrder + 1;*/
-	    return this.i+1;
+	    this.i++;
+	    return this.i;
 	    
 	},
 	
@@ -59,6 +61,7 @@ const info = new Vue({
 		    y: this.order.details.y,
 		},
 		orderItems: vm.getOrder(),
+		orderInfo: [this.fullname, this.email, this.payment_method, this.gender],
 	    });
 	},
 
@@ -73,7 +76,7 @@ const info = new Vue({
 		    x: event.clientX - 10 - offset.x,
 		    y: event.clientY - 10 - offset.y,
 		},
-		orderItems: ['Beans', 'Curry'],
+		orderItems: vm.getOrder(),
 	    };
 	},	
 
@@ -91,14 +94,15 @@ const info = new Vue({
 	    paymentItem.innerHTML = payment_method;
 	    let genderItem = document.createElement("li");
 	    genderItem.innerHTML = gender;
-	    
-	    this.addOrder();
-	    
+	    	    
 	    divElement.appendChild(nameItem);
 	    divElement.appendChild(emailItem);
 	    divElement.appendChild(paymentItem);
 	    divElement.appendChild(genderItem);
 
+	    this.addOrder();
+	    console.log(this.orders);
+	    
 	    for (x of order) {
 		let currentBurger = document.createElement("li");
 		currentBurger.innerHTML = x;
